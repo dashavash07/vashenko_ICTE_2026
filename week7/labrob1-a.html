@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Криворізька міська рада у AR.js</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; trackingMethod: best;">
+      <a-assets>
+        <img id="brick-texture" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/bricks/brick_diffuse.jpg">
+      </a-assets>
+      <a-marker type="pattern" url="pattern-Coat_of_Arms_of_Kryvyy_Rih.patt">
+        <a-entity animation="property: position; from: 0 0 0; to: 0 0 -3; dur: 3000; easing: easeInOutQuad; loop: false">
+          <a-entity scale="0.1 0.1 0.1" position="0 0 0">
+            <a-box position="0 2 0" width="20" height="4" depth="2.5" 
+                   src="#brick-texture" repeat="10 2"></a-box>
+            <a-box position="-8.75 2 3.5" width="2.5" height="4" depth="5" 
+                   src="#brick-texture" repeat="1.5 2"></a-box>
+            <a-box position="0 2 3.5" width="5" height="4" depth="5" 
+                   src="#brick-texture" repeat="3 2"></a-box>
+            <a-box position="8.75 2 3.5" width="2.5" height="4" depth="5" 
+                   src="#brick-texture" repeat="1.5 2"></a-box>         
+          </a-entity>
+        </a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
