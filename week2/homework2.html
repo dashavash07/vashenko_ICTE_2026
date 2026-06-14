@@ -1,0 +1,33 @@
+<html>
+    <head>
+          <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    </head>
+    <body>
+           <a-scene stats>
+                <a-assets>
+                    <img id="sky" src="../images/sky.jpg">
+                    <img id="kartina" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/illustration/758px-Canestra_di_frutta_(Caravaggio).jpg">
+                    <img id="moon" src="../images/Moon.jpg">
+                    <a-asset-item id="models" src="../models/low_poly_space_shuttle.glb"></a-asset-item>
+                </a-assets>
+                <a-sky src="#sky"></a-sky>
+                <a-torus position="-2 1 -5" color="green" radius="1.2"
+                        animation = "property: components.material.material.color; type: color; from: green; to: blue; loop: true; dur: 10000"
+                ></a-torus>
+                <a-plane src = "#kartina" width="7" height="7" rotation="-50 0 0" position="-2 -2 -5" color="purple"></a-plane>
+                <a-cylinder color="yellow" height="2" radius="0.05" position="-2 -1 -5"></a-cylinder>
+                <a-cylinder color="blue" height="2" radius="0.05" position="-3 -1 -5"></a-cylinder>
+                <a-torus-knot color="orange" radius="1.2" position="-3 1 -5"
+                        animation = "property:rotation; to: 0 360 360; loop: true; dur: 10000"  ></a-torus-knot>
+
+                <a-entity position="1 4 -5" animation = "property:rotation; to: 0 360 0; loop: true; dur: 5000">
+                    <a-sphere radius = "1" src = "#moon"></a-sphere>
+                    <a-cylinder color="gray" height="2.1" radius="0.05" ></a-cylinder>
+                </a-entity>
+
+                <a-plane width="9" height="2" position="3 1 -9"></a-plane>
+                <a-text value="Ващенко Дар'я" font="Calibri.json" negate="false" color="black" width="10" position="-0.5 1 -6"></a-text>
+                <a-entity position="5 0 -3"  scale="0.25 0.25 0.25" rotation = "45 -90 0" gltf-model="#models"></a-entity>
+            </a-scene>
+    </body>
+</html>
